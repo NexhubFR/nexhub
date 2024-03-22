@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexhub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FAF8F0;
+        }
+
+        #mainText {
+            color: black;
+            font-size: 3em;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .bottom-image {
+            position: absolute;
+            bottom: 3vh;
+        }
+
+        .bottom-image:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainText"></div>   
+    <img class="bottom-image" src="./github-logo.png" onclick="window.location.href=`https://github.com/NexhubFR`;" width="120" height="50" />
+    
+    <script>
+        (function typeWriter() {
+            const text = 'nexhub.fr';
+            const container = document.getElementById('mainText');
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    container.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(() => {
+                        container.innerHTML = '';
+                        i = 0;
+                        setTimeout(type, 500);
+                    }, 2000); 
+                }
+            }
+
+            type();
+            })();
+    </script>
+</body>
+</html>
