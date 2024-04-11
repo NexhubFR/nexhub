@@ -3,52 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/nexhub-logo.png"/>
+    <link rel="icon" type="image/png" href="assets/nexhub-logo.jpg"/>
+    <link rel="stylesheet" href="./style.css">
     <title>Nexhub</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FAF8F0;
-        }
-
-        #mainText {
-            color: black;
-            font-size: 3em;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-    <div id="mainText"></div>       
-    <script>
-        (function typeWriter() {
-            const text = 'nexhub.fr';
-            const container = document.getElementById('mainText');
-            let i = 0;
+    <div>
+        <img id="logo" src="assets/nexhub-logo.jpg" />
+        <p id="title">
+            Nexhub - Place for open-source projects.
+        </p>
+        <p id="description">
+            NexHub is a GitHub organization specializing in aggregating and developing open-source projects.
+            <br />
+            Our goal is to offer a diverse portfolio of projects utilizing a variety of languages and frameworks.
+        </p>
 
-            function type() {
-                if (i < text.length) {
-                    container.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, 500);
-                } else {
-                    setTimeout(() => {
-                        container.innerHTML = '';
-                        i = 0;
-                        setTimeout(type, 500);
-                    }, 2000); 
-                }
-            }
-
-            type();
-            })();
-    </script>
+        <div id="links">
+            <img class="icon-links" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" onclick="window.location.href=`https://github.com/NexhubFR`;" />
+            <img class="icon-links" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" onclick="window.location.href=`https://pub.dev/publishers/nexhub.fr`;" />
+        </div>
+    </div>
 </body>
 </html>
